@@ -1,0 +1,193 @@
+﻿@model eStoreWebsite.Models.UserModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Please Register!</h2>
+
+
+<script>
+    //server builds the message, just display it either way
+    var onSuccessOrFailure = function (result) {
+        $('#ajaxMsg').text(result);
+    }
+</script>
+@using (Ajax.BeginForm("RegisterAsync", "Register", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST",
+    LoadingElementId = "ajaxSplash",
+    UpdateTargetId = "ajaxMsg",
+    OnSuccess = "onSuccessOrFailure",
+    OnFailure = "onSuccessOrFailure"
+}))
+{
+
+    @Html.AntiForgeryToken();
+
+                        //@using (Html.BeginForm()) {
+
+<div class="modal" id="register_popup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <div style="font-size:x-large; padding-bottom: 20px; text-align:center;">
+                    Please Register!
+                </div>
+            </div> <!--Modal-Header-->
+            <div class="text-center" style="padding:20px;">
+                <div class="tabbable" id="myTabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#demographic" data-toggle="tab">Demographic</a></li>
+                        <li><a href="#address" data-toggle="tab">Address</a></li>
+                        <li><a href="#account" data-toggle="tab">Account</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="demographic">
+                            <!--<h2>Demographic</h2>-->
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Firstname, new { @class = "control-label col-md-2"} )
+                                <div class="col-md-10" style="padding-right:250px">
+                                    @Html.EditorFor(model => model.Firstname)
+                                    @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Lastname, new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10" style="padding-right:250px">
+                                        @Html.EditorFor(model => model.Lastname)
+                                        @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                                    </div>                                  
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Age, new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10" style="padding-right:250px">
+                                                @Html.EditorFor(model => model.Age)
+                                                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    
+                                    <!--ADD CCARD HERE-->
+                                    @{//Hard coded dropdown contents
+                                      List<SelectListItem> css = new List<SelectListItem>();
+                                      css.Add(new SelectListItem { Text = "Choose credit card type", Disabled=true, Selected= true });
+                                      css.Add(new SelectListItem { Text = "Visa", Value = "V" });
+                                      css.Add(new SelectListItem { Text = "Mastercard", Value = "M" });
+                                      css.Add(new SelectListItem { Text = "American Express", Value = "A" });
+                                    }
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            @Html.Label("Credit Card", htmlAttributes: new { @class = "control-label" })
+                                        </div>
+                                        <div class="col-md-10" style="padding-right:250px">
+                                            @Html.DropDownListFor(model => model.CreditcardType, css, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.CreditcardType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="address">
+                           <!-- <h2>Address Contents</h2>-->
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Address1, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:250px">
+                                    @Html.EditorFor(model => model.Address1)
+                                    @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.City, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:250px">
+                                    @Html.EditorFor(model => model.City)
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Region, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:250px">
+                                    @Html.EditorFor(model => model.Region)
+                                    @Html.ValidationMessageFor(model => model.Region, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <!--Country-->
+                            @{//Hard coded dropdown contents
+                                      List<SelectListItem> countrydropdown = new List<SelectListItem>();
+                                      countrydropdown.Add(new SelectListItem { Text = "Choose a country", Disabled = true, Selected = true });
+                                      countrydropdown.Add(new SelectListItem { Text = "Canada", Value = "CA" });
+                                      countrydropdown.Add(new SelectListItem { Text = "United States of America", Value = "USA" });
+                                      countrydropdown.Add(new SelectListItem { Text = "Austria", Value = "AUS" });
+                                      countrydropdown.Add(new SelectListItem { Text = "Czech Republic", Value = "CzRe" });
+                                      countrydropdown.Add(new SelectListItem { Text = "France", Value = "Fr" });
+                                      countrydropdown.Add(new SelectListItem { Text = "Egypt", Value = "Eg" });
+                                      countrydropdown.Add(new SelectListItem { Text = "Italy", Value = "Ital" });
+                            }
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    @Html.Label("Country", htmlAttributes: new { @class = "control-label" })
+                                </div>
+                                <div class="col-md-10" style="padding-right:250px">
+                                    @Html.DropDownListFor(model => model.Country, countrydropdown, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mailcode, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:250px">
+                                    @Html.EditorFor(model => model.Mailcode)
+                                    @Html.ValidationMessageFor(model => model.Mailcode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="account">
+                           <!-- <h2>Account Contents</h2>-->
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:230px">
+                                    @Html.EditorFor(model => model.UserName)
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:238px">
+                                    @Html.EditorFor(model => model.Email)
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:230px">
+                                    @Html.PasswordFor(model => model.Password)
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.RepeatPassword, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10" style="padding-right:230px">
+                                    @Html.PasswordFor(model => model.RepeatPassword)
+                                    @Html.ValidationMessageFor(model => model.RepeatPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Register" />
+                            <br />
+                        </div>
+                    </div>
+                </div> <!--tabbable-->
+            </div><!--text-center-->
+
+
+            <div class="modal-footer">
+                <div id="ajaxMsg"></div>
+                <div id="ajaxSplash" style="display: none; z-index:60;">Working...</div>
+            </div> <!-- Modal Footer-->
+
+    </div><!--modal-content-->
+</div><!--Modal dialog-->
+</div><!--register popup-->
+    
+    
+}
+

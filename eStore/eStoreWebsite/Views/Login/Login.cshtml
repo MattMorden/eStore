@@ -1,0 +1,94 @@
+﻿@model eStoreWebsite.Models.UserModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+
+<script>
+    //server builds the message, just display it either way
+    var onSuccessOrFailure = function (result) {
+        $('#ajaxMsg').text(result);
+    }
+</script>
+
+<script type="text/javascript">
+    var onSuccess = function (result) {
+        if(result == "Success") {
+            window.location.href = "/Home/Home"; // sends them to home page
+        }
+        else {
+        $('#ajaxMsg').text(result);
+        }
+    }
+</script>
+
+@using (Ajax.BeginForm("LoginAsync", "Login", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST",
+    LoadingElementId = "ajaxSplash",
+    UpdateTargetId = "ajaxMsg",
+    OnSuccess = "onSuccess",
+    OnFailure = "onSuccessOrFailure"
+}))
+{
+
+    @Html.AntiForgeryToken();
+
+                            //@using (Html.BeginForm()) {
+
+                            <div class="modal" id="login_popup">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                                        </div> <!--Modal-Header-->
+
+                                        <div class="text-center" style="padding:20px;">
+                                            <div class="tabbable" id="myTabs">
+                                                <div class="tab-content">
+                                                    <img src="~/Images/credentials.png" alt="" />
+                                                        <h2>Enter Credentials</h2>
+
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+                                                            <div class="col-md-10">
+                                                                @Html.TextBoxFor(model => model.UserName, new { @placeholder = "Username" })
+                                                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger"})
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+                                                            <div class="col-md-10">
+                                                                @Html.PasswordFor(model => model.Password, new { @placeholder = "Password" })
+                                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+
+
+                                                        <input type="submit" class="btn btn-primary" value="Login" />
+                                                        <br />
+                                                    </div><!--tab content-->
+                                                </div><!--tabbable-->
+                                            </div> <!--text center-->
+
+                                        <div class="modal-footer">
+                                            <div id="ajaxMsg"></div>
+                                            <div id="ajaxSplash" style="display: none; z-index:60;">Working...</div>
+                                        </div> <!-- Modal Footer-->
+                                        </div><!--modal-content-->
+
+
+
+
+                                    </div><!-- modal dialog-->
+                                </div> <!-- modal-->
+
+
+
+}
+

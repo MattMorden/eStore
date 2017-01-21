@@ -1,0 +1,83 @@
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.csprojResolveAssemblyReference.cache
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.dll.config
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.pdb
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\EStoreDAL.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Owin.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\EStoreDAL.pdb
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.xml
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.xml
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.dll
+C:\Users\Tanner\Documents\Visual Studio 2013\Projects\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.pdb
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.dll.config
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.pdb
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\EntityFramework.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\EntityFramework.SqlServer.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\EStoreDAL.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Owin.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\EStoreDAL.pdb
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\EntityFramework.xml
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\EntityFramework.SqlServer.xml
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.xml
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.csprojResolveAssemblyReference.cache
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.dll
+E:\Semester 4\ClientServer\Projects\eStore\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.pdb
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.dll.config
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\DALIntegrationTests.pdb
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.SqlServer.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\EStoreDAL.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\eStoreWebsite.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Mvc.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Http.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Owin.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Http.WebHost.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.WebPages.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Razor.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Net.Http.Formatting.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\EStoreDAL.pdb
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\eStoreWebsite.pdb
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\EntityFramework.SqlServer.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Mvc.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Http.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Http.WebHost.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.WebPages.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.Razor.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Net.Http.Formatting.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.csprojResolveAssemblyReference.cache
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.dll
+E:\Semester 4\ClientServer\Projects\eStore\DALIntegrationTests\obj\Debug\DALIntegrationTests.pdb

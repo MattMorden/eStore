@@ -1,0 +1,75 @@
+﻿@using eStoreWebsite.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center orderlist">
+    <h2>Our Current Products</h2>
+    <div id="catalogue">
+        @Html.Catalogue("mycat")
+    </div>
+</div>
+
+<script type="text/javascript">
+    var onSuccessOrFailure = function (result) {
+        $('#ajaxMsg').text(result);
+    }
+</script>
+@using (
+Ajax.BeginForm("AddToCart", "Shop", new AjaxOptions
+{
+    LoadingElementId = "ajaxSplash",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST",
+    OnSuccess = "onSuccessOrFailure",
+    OnFailure = "onSuccessOrFailure"
+}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal" id="details_popup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <p style="font-size: x-large; padding-bottom: 20px; text-align: center;">Shop</p>
+                </div>
+                <div class="modal-body text-left">
+                    <p id="detailsProductName" style="font-size:large;display:inline;" />
+                    <div id="detailsPrice" style="display:inline;"></div>
+                    <span id="detailsPrice" class="shopPrice" style="font-size: 20px;"></span>
+                    <div class="twocolumn">
+                        <div class="img" style="display:inline">
+                            <img id="detailsGraphic" alt="" width="330" height="310" />
+                        </div>
+                        <p id="detailsDescription" class="shopdescription text-center" style="display:inline; float:right;"></p>
+
+                        @*<div id="detailsDescription" class="shopdescription" style="float: right"></div>*@
+                    </div>
+                    <div class="row" style="padding-bottom:5%;">
+                        <div class="text-center">
+                            <label for="qty">Qty:</label>
+                            <input id="qty" name="qty" type="number" value="1" min="0" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Add To Cart" />
+                    <input id="btnRemove" type="submit" class="btn btn-primary" value="Remove" />
+                    <!--JQuery onclick is the same as traditional onclick="window.location.href - 'ViewCart'"-->
+                    <input type="submit" value="View Cart" class="btn-custom" onclick="$(location).attr('href', '/ViewCart/ViewCart')" />
+                    <hr />
+                    <div id="ajaxMsg"></div>
+                    <div id="ajaxSplash" style="display: none; z-index: 60;">Working...</div>
+                </div>
+            </div>
+            @Html.Hidden("detailsProductcode")
+            @Html.AntiForgeryToken();
+
+
+        </div>
+
+    </div>
+
+}

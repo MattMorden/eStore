@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    var onSuccessOrFailure = function (result) {
+        $("#ajaxMsg").text(result);
+    }
+</script>
+
+<div class="text-center">
+    <h2>Cart Contents</h2>
+    <img src="~/Images/cart.png" alt="" width="50" height="50" style="padding-bottom: 5px;" />
+    <div id="ajaxMsg" class="ajaxMsg"></div>
+</div>
+
+@using (Ajax.BeginForm("genOrder", "ViewCart", new AjaxOptions
+{
+    LoadingElementId = "ajaxSplash",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST",
+    OnSuccess = "onSuccessOrFailure",
+    OnFailure = "onSuccessOrFailure",
+    OnComplete = "$('#orderButton').hide();"
+}))
+{
+
+    @Html.AntiForgeryToken();
+    <div class="row text-center alert-danger">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Code</div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">Product Name</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">MSRP</div>
+        <div class="col-lg-2 col-md-1 col-sm-1 col-xs-2">Qty</div>
+        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2 text-right">Extended</div>
+    </div>
+
+    {
+        eStoreWebsite.Models.CartItemDTO[] cart = (eStoreWebsite.Models.CartItemDTO[])Session["cart"];
+        double amt = 0.0;
+        double itemTotal = 0.0;
+        
+        if (cart != null)
+        {
+            foreach (eStoreWebsite.Models.CartItemDTO item in cart)
+            {
+                if (item.Qty > 0)
+                {
+                    amt += item.Qty * Convert.ToDouble(item.Msrp);
+                    itemTotal = item.Qty * Convert.ToDouble(item.Msrp);
+                    <div class="row text-center details">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">@item.ProductCode</div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">@item.ProductName</div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">@String.Format("{0:C2}", item.Msrp)</div>
+                        <div class="col-lg-2 col-md-1 col-sm-1 col-xs-2">@item.Qty</div>
+                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-2 text-right">@String.Format("{0:C2}", itemTotal)</div>
+                    </div>
+                }//End if
+            }//End foreach
+
+            double tax = amt * 0.13;
+            double total = amt + tax; //Total price
+            Session["orderamt"] = itemTotal;
+
+           
+            
+            <div class="row text-right">
+                <!-- HR -->
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9">&nbsp;</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 text-right"><hr /></div>
+            </div> 
+    
+            <!-- Sub Total -->
+            <div class="row text-right">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-7">&nbsp;</div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-2">Sub Total:</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 text-right">@String.Format("{0:C2}", amt)</div>
+            </div> 
+    
+            <!-- Tax (13%)-->
+            <div class="row text-right">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-7">&nbsp;</div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-2">Tax:</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 text-right">@String.Format("{0:C2}", tax)</div>
+            </div> 
+    
+            <!-- Order Total -->    
+            <div class="row text-right">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-7">&nbsp;</div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-2">Order Tax:</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 text-right">@String.Format("{0:C2}", total)</div>
+            </div>
+            
+    
+
+
+
+    
+            <div class="button text-center">
+                <input type="submit" class="btn btn-primary" id="orderButton" value="Checkout" onclick="" />
+            </div>
+        }//Endif
+    } <!-- eStore block-->
+}

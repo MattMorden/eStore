@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eStoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OrderLineitem">
+    <Key>
+      <PropertyRef Name="LineItemID" />
+    </Key>
+    <Property Name="LineItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QtyOrdered" Type="Int32" Nullable="false" />
+    <Property Name="QtySold" Type="Int32" Nullable="false" />
+    <Property Name="QtyBackOrdered" Type="Int32" Nullable="false" />
+    <Property Name="SellingPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Timer" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ItemIsProduct" FromRole="OrderLineitems" ToRole="Products" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderHasItems" FromRole="OrderLineitems" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Timer" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="OrderLineitems" Relationship="Self.FK_OrderHasItems" FromRole="Orders" ToRole="OrderLineitems" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GraphicName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CostPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="QtyOnHand" Type="Int32" Nullable="false" />
+    <Property Name="QtyOnBackOrder" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Timer" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="OrderLineitems" Relationship="Self.FK_ItemIsProduct" FromRole="Products" ToRole="OrderLineitems" />
+  </EntityType>
+  <Association Name="FK_ItemIsProduct">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="OrderLineitems" Type="Self.OrderLineitem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderLineitems">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderHasItems">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderLineitems" Type="Self.OrderLineitem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderLineitems">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OrderLineitems" EntityType="Self.OrderLineitem" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK_ItemIsProduct" Association="Self.FK_ItemIsProduct">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderLineitems" EntitySet="OrderLineitems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderHasItems" Association="Self.FK_OrderHasItems">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderLineitems" EntitySet="OrderLineitems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
